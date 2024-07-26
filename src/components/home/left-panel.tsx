@@ -2,9 +2,12 @@ import { ListFilter, LogOut, MessageSquareDiff, Search, User } from "lucide-reac
 import { Input } from "../ui/input";
 //import ThemeSwitch from "./theme-switch";
 import ThemeSwitch from "./theme-switch";
+//import { conversations } from "@/src/dummy-data/db";
+import { conversations } from "@/src/dummy-data/db";
+import Conversation from "./conversation";
 
 const LeftPanel = () => {
-	const conversations = [];
+	// const conversations = [];
 
 	return (
 		<div className='w-1/4 border-gray-600 border-r'>
@@ -39,6 +42,9 @@ const LeftPanel = () => {
 			{/* Chat List */}
 			<div className='my-3 flex flex-col gap-0 max-h-[80%] overflow-auto'>
 				{/* Conversations will go here*/}
+				{ conversations.map((conversation) => (
+					<Conversation key={conversation._id} conversation={conversation} />
+				))}
 
 				{conversations?.length === 0 && (
 					<>
