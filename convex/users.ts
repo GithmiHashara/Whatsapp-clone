@@ -71,3 +71,62 @@ export const setUserOffline = internalMutation({
 		await ctx.db.patch(user._id, { isOnline: false });
 	},
 });
+
+export const getUsers = query({
+	args: {},
+	handler: async (ctx, args) => {
+		const identity = await ctx.auth.getUserIdentity();
+		if (!identity) {
+			throw new ConvexError("Unauthorized");
+		}
+
+		const users = await ctx.db.query("users").collect();
+		return users;
+		//.filter((user) => user.tokenIdentifier !== identity.tokenIdentifier);
+	},
+});
+
+export const getMe = query({
+	args: {},
+	handler: async (ctx, args) => {
+		const identity = await ctx.auth.getUserIdentity();
+		if (!identity) {
+			throw new ConvexError("Unauthorized");
+		}
+
+		const user = await ctx.db
+			.query("users")
+			.withIndex("by_tokenIdentifier", (q) => q.eq("tokenIdentifier", identity.tokenIdentifier))
+			.unique();
+
+		if (!user) {
+			throw new ConvexError("User not found");
+		}
+
+		return user;
+	},
+});
+
+// export const getGroupMembers = query({
+// 	args: { conversationId: v.id("conversations") },
+// 	handler: async (ctx, args) => {
+// 		const identity = await ctx.auth.getUserIdentity();
+
+// 		if (!identity) {
+// 			throw new ConvexError("Unauthorized");
+// 		}
+
+// 		const conversation = await ctx.db
+// 			.query("conversations")
+// 			.filter((q) => q.eq(q.field("_id"), args.conversationId))
+// 			.first();
+// 		if (!conversation) {
+// 			throw new ConvexError("Conversation not found");
+// 		}
+
+// 		const users = await ctx.db.query("users").collect();
+// 		const groupMembers = users.filter((user) => conversation.participants.includes(user._id));
+
+// 		return groupMembers;
+// 	},
+// });
