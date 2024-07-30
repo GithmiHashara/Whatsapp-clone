@@ -82,7 +82,7 @@ export const getUsers = query({
 
 		const users = await ctx.db.query("users").collect();
 		return users;
-		//.filter((user) => user.tokenIdentifier !== identity.tokenIdentifier);
+		//return users.filter((user) => user.tokenIdentifier !== identity.tokenIdentifier); (if you want to remove message with your self) wthout the above line you v=can use this line
 	},
 });
 
