@@ -81,8 +81,8 @@ export const getUsers = query({
 		}
 
 		const users = await ctx.db.query("users").collect();
-		return users;
-		//return users.filter((user) => user.tokenIdentifier !== identity.tokenIdentifier); (if you want to remove message with your self) wthout the above line you v=can use this line
+		// return users;
+		return users.filter((user) => user.tokenIdentifier !== identity.tokenIdentifier); //(if you want to remove message with your self) wthout the above line you v=can use this line
 	},
 });
 
@@ -107,26 +107,27 @@ export const getMe = query({
 	},
 });
 
-// export const getGroupMembers = query({
-// 	args: { conversationId: v.id("conversations") },
-// 	handler: async (ctx, args) => {
-// 		const identity = await ctx.auth.getUserIdentity();
+export const getGroupMembers = query({
+	args: { conversationId: v.id("conversations") },
+	handler: async (ctx, args) => {
+		const identity = await ctx.auth.getUserIdentity();
 
-// 		if (!identity) {
-// 			throw new ConvexError("Unauthorized");
-// 		}
+		if (!identity) {
+			throw new ConvexError("Unauthorized");
+		}
 
-// 		const conversation = await ctx.db
-// 			.query("conversations")
-// 			.filter((q) => q.eq(q.field("_id"), args.conversationId))
-// 			.first();
-// 		if (!conversation) {
-// 			throw new ConvexError("Conversation not found");
-// 		}
+		const conversation = await ctx.db
+			.query("conversations")
+			.filter((q) => q.eq(q.field("_id"), args.conversationId))
+			.first();
+		if (!conversation) {
+			throw new ConvexError("Conversation not found");
+		}
 
-// 		const users = await ctx.db.query("users").collect();
-// 		const groupMembers = users.filter((user) => conversation.participants.includes(user._id));
+		const users = await ctx.db.query("users").collect();
+		const groupMembers = users.filter((user) => conversation.participants.includes(user._id)); //filter group members
+		
 
-// 		return groupMembers;
-// 	},
-// });
+		return groupMembers;
+	},
+});

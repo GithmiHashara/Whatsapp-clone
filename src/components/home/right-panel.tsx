@@ -10,12 +10,15 @@ import MessageContainer from "./message-container";
 //import ChatPlaceHolder from "@/components/home/chat-placeholder";
 import ChatPlaceHolder from "./chat-placeholder";
 import GroupMembersDialog from "./group-members-dialog";
+import { useConversationStore } from "@/src/store/chat-store";
 
 const RightPanel = () => {
-	const selectedConversation = true;
+	const {selectedConversation, setSelectedConversation} = useConversationStore();
 	if (!selectedConversation) return <ChatPlaceHolder />;
 
-	const conversationName = "John Doe";
+	const conversationName = selectedConversation.groupName || selectedConversation.name;
+	const conversationImage = selectedConversation.groupName || selectedConversation.name;
+
   const isGroup = true; 
 
 	return (
@@ -32,7 +35,10 @@ const RightPanel = () => {
 						</Avatar>
 						<div className='flex flex-col'>
 							<p>{conversationName}</p>
-							{isGroup && <GroupMembersDialog />}
+							{selectedConversation.isGroup && (
+
+							 <GroupMembersDialog selectedConversation={selectedConversation}  /> 
+							)};
 						</div>
 					</div>
 
@@ -40,7 +46,7 @@ const RightPanel = () => {
 						<a href='/video-call' target='_blank'>
 							<Video size={23} />
 						</a>
-						<X size={16} className='cursor-pointer' />
+						<X size={16} className='cursor-pointer' onClick={() => setSelectedConversation(null)} />
 					</div>
 				</div>
 			</div>
