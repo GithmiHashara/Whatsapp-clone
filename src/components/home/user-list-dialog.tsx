@@ -18,6 +18,7 @@ import toast from "react-hot-toast";
 import { useMutation, useQuery } from "convex/react";
 import { Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
+import { useConversationStore } from "@/src/store/chat-store";
 //type Id<T extends string> = string;
 
 
@@ -36,7 +37,7 @@ const UserListDialog = () => {
 	const me = useQuery(api.users.getMe);
 	const users = useQuery(api.users.getUsers);
 
-	//const { setSelectedConversation } = useConversationStore();
+	const { setSelectedConversation } = useConversationStore();
 
 
 const handleCreateConversation = async () => {
@@ -79,14 +80,14 @@ const handleCreateConversation = async () => {
 		// TODO => Update a global state called "selectedConversation"
 		const conversationName = isGroup ? groupName : users?.find((user) => user._id === selectedUsers[0])?.name;
 
-		// setSelectedConversation({
-		// 	_id: conversationId,
-		// 	participants: selectedUsers,
-		// 	isGroup,
-		// 	image: isGroup ? renderedImage : users?.find((user) => user._id === selectedUsers[0])?.image,
-		// 	name: conversationName,
-		// 	admin: me?._id!,
-		// });
+		setSelectedConversation({
+			_id: conversationId,
+			participants: selectedUsers,
+			isGroup,
+			image: isGroup ? renderedImage : users?.find((user) => user._id === selectedUsers[0])?.image,
+			name: conversationName,
+			admin: me?._id!,
+		});
 	} catch (err) {
 		toast.error("Failed to create conversation");
 		console.error(err);
