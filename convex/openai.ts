@@ -3,7 +3,7 @@ import { action } from "./_generated/server";
 import { v } from "convex/values";
 import { api } from "./_generated/api";
 
-const apiKey = process.env.OPENAI_API_KEY
+const apiKey = process.env.OPENAI_API_KEY ;
 const openai = new OpenAI({apiKey});
 
 //create action
