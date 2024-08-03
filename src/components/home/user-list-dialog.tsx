@@ -1,15 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-//import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-// import {
-// 	Dialog,
-// 	DialogContent,
-// 	DialogDescription,
-// 	DialogHeader,
-// 	DialogTitle,
-// 	DialogTrigger,
-// } from "@/components/ui/dialog";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -19,7 +10,6 @@ import { useMutation, useQuery } from "convex/react";
 import { Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
 import { useConversationStore } from "@/src/store/chat-store";
-//type Id<T extends string> = string;
 
 
 const UserListDialog = () => {

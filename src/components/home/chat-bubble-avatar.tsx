@@ -5,6 +5,7 @@ type ChatBubbleAvatarProps = {
 	message: IMessage;
 	isMember: boolean;
 	isGroup: boolean | undefined;
+	fromAI: boolean;
 };
 
 const ChatBubbleAvatar = ({ isGroup, isMember, message}: ChatBubbleAvatarProps) => {
