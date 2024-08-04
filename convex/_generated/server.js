@@ -88,3 +88,4 @@ export const internalAction = internalActionGeneric;
  * @returns The wrapped endpoint function. Route a URL path to this function in `convex/http.js`.
  */
 export const httpAction = httpActionGeneric;
+
