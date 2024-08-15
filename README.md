@@ -4,7 +4,7 @@ Technologies Used:
 Next.js: For server-side rendering and building the user interface.
 TypeScript: To add static typing and enhance development efficiency.
 React: For building reusable UI components.
-Conves: For real-time messaging and chat functionalities.
+Conves: For real-time messaging and chat functionalities. All the data is save here.
 Clerk: To handle user authentication and management.
 Zego Cloud: To provide video call capabilities.
 
