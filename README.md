@@ -8,6 +8,9 @@ Conves: For real-time messaging and chat functionalities. All the data is save h
 Clerk: To handle user authentication and management.
 Zego Cloud: To provide video call capabilities.
 
+React Hot Toast Integration
+In this WhatsApp clone, I've integrated React Hot Toast to provide a smooth and responsive notification system. React Hot Toast is a lightweight, customizable toast library that allows us to display brief messages to users, such as successful actions, errors, or important alerts.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
