@@ -1,6 +1,6 @@
 This project is a WhatsApp clone developed with a modern tech stack to mimic the core functionalities of the popular messaging app.
 
-Technologies Used:
+Technologies Used in this application:
 Next.js: For server-side rendering and building the user interface.
 TypeScript: To add static typing and enhance development efficiency.
 React: For building reusable UI components.
