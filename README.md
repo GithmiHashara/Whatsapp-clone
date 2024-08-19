@@ -11,6 +11,9 @@ Zego Cloud: To provide video call capabilities.
 React Hot Toast Integration
 In this WhatsApp clone, I've integrated React Hot Toast to provide a smooth and responsive notification system. React Hot Toast is a lightweight, customizable toast library that allows us to display brief messages to users, such as successful actions, errors, or important alerts.
 
+Zego Cloud
+Zego Cloud is integrated into the WhatsApp clone to provide seamless video call functionality. It offers a reliable and scalable solution for real-time communication, enabling users to initiate and participate in high-quality video calls within the app. Zego Cloud's easy-to-use APIs and SDKs made it straightforward to integrate video calling features, ensuring a smooth user experience across different devices and network conditions.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
