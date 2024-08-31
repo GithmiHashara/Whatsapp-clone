@@ -14,6 +14,14 @@ In this WhatsApp clone, I've integrated React Hot Toast to provide a smooth and 
 Zego Cloud
 Zego Cloud is integrated into the WhatsApp clone to provide seamless video call functionality. It offers a reliable and scalable solution for real-time communication, enabling users to initiate and participate in high-quality video calls within the app. Zego Cloud's easy-to-use APIs and SDKs made it straightforward to integrate video calling features, ensuring a smooth user experience across different devices and network conditions.
 
+Project Overview
+This WhatsApp clone is developed using a cutting-edge tech stack, aiming to replicate the core functionalities of the original messaging app while introducing some modern enhancements.
+
+Key Features
+Real-Time Messaging: Leveraging Convex, this app offers robust real-time chat capabilities, ensuring users experience seamless communication.
+User Authentication: With Clerk, users can easily sign up, log in, and manage their accounts securely.
+Video Calls: Zego Cloud integration provides high-quality, real-time video calls, enhancing the communication experience.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
