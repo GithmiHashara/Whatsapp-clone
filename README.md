@@ -18,9 +18,12 @@ Project Overview
 This WhatsApp clone is developed using a cutting-edge tech stack, aiming to replicate the core functionalities of the original messaging app while introducing some modern enhancements.
 
 Key Features
-Real-Time Messaging: Leveraging Convex, this app offers robust real-time chat capabilities, ensuring users experience seamless communication.
-User Authentication: With Clerk, users can easily sign up, log in, and manage their accounts securely.
-Video Calls: Zego Cloud integration provides high-quality, real-time video calls, enhancing the communication experience.
+-Real-Time Messaging: Leveraging Convex, this app offers robust real-time chat capabilities, ensuring users experience seamless communication.
+-User Authentication: With Clerk, users can easily sign up, log in, and manage their accounts securely.
+-Video Calls: Zego Cloud integration provides high-quality, real-time video calls, enhancing the communication experience.
+
+Additional Features
+React Hot Toast Integration: The app features React Hot Toast for real-time notifications, offering users immediate feedback on their actions. Whether it’s a message sent, an error, or a successful action, users are kept informed through smooth and visually appealing toast notifications.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
